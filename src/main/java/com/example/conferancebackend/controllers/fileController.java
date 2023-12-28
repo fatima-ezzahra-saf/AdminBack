@@ -22,9 +22,9 @@ public class fileController {
     fileService fileService;
 
     @PostMapping("/upload")
-    public String AddFile(@RequestParam("file") MultipartFile file) {
+    public String AddFile(@RequestParam("file") MultipartFile file,@RequestBody String email,@RequestBody String type) {
         try {
-            fileService.saveFile(file.getOriginalFilename(), file);
+            fileService.saveFile(file.getOriginalFilename(), file,email,type);
             return "File uploaded successfully!";
         } catch (IOException e) {
             return "Error uploading file: " + e.getMessage();

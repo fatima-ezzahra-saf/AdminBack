@@ -14,6 +14,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @RequestMapping("/participant")
+@CrossOrigin("http://localhost:3000")
 public class participantController {
          @Autowired
          private participantServiceImp participantServiceImp;

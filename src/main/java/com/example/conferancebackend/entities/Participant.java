@@ -14,7 +14,11 @@ public class Participant {
     Long id;
     String nom;
     String prenom;
+    @Column(unique = true)
     String email;
-    @OneToOne
-    private File file;
+    String fonction;
+    String somme;
+    public Participant(Long id){
+        this.id=id;
+    }
 }

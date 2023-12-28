@@ -18,4 +18,7 @@ public class File {
     @Column(columnDefinition = "LONGBLOB")
     private byte[] contenu;
     private String status;
+    private String type;
+    @OneToOne
+    private Participant participant;
 }
