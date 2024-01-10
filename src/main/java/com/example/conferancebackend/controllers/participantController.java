@@ -22,7 +22,7 @@ public class participantController {
          public List<Participant> gatAll(){
              return participantServiceImp.getAllPartic();
          }
-         @GetMapping("/delete/{id}")
+         @DeleteMapping("/delete/{id}")
          public void deletePart(@PathVariable Long id){
              participantServiceImp.deletePartic(id);
          }

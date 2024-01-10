@@ -20,5 +20,10 @@ public class File {
     private String status;
     private String type;
     @OneToOne
+    @JoinColumn(name = "participant_id")
     private Participant participant;
+
+    public Participant getParticipant() {
+        return participant;
+    }
 }

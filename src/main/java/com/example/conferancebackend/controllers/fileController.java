@@ -22,7 +22,7 @@ public class fileController {
     fileService fileService;
 
     @PostMapping("/upload")
-    public String AddFile(@RequestParam("file") MultipartFile file,@RequestBody String email,@RequestBody String type) {
+    public String AddFile(@RequestParam("file") MultipartFile file,@RequestParam String email,@RequestParam String type) {
         try {
             fileService.saveFile(file.getOriginalFilename(), file,email,type);
             return "File uploaded successfully!";
@@ -30,7 +30,11 @@ public class fileController {
             return "Error uploading file: " + e.getMessage();
         }
     }
-
+@DeleteMapping("/delete/{id}")
+    public String delete(@PathVariable Long id) {
+        fileService.delete(id);
+        return "File uploaded successfully!";
+    }
     @GetMapping("/getAllFile")
     public List<File> getAllFile(){
         return fileService.getAllFile();
