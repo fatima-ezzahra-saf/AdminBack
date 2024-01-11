@@ -36,8 +36,8 @@ public class fileController {
         return "File uploaded successfully!";
     }
     @GetMapping("/getAllFile")
-    public List<File> getAllFile(){
-        return fileService.getAllFile();
+    public List<File> getAllFileWithParticipant(){
+        return fileService.getAllFileWithParticipant();
     }
 
     @GetMapping("/downloadFile/{fileId}")
@@ -65,4 +65,5 @@ public class fileController {
         f.get().setStatus("valide");
         fileService.save(f);
     }
+
 }

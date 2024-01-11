@@ -42,4 +42,7 @@ public class fileService {
         File f = file.orElse(null);
         fileRepository.save(f);
     }
+    public List<File> getAllFileWithParticipant() {
+        return fileRepository.findAllWithParticipant();
+    }
 }
